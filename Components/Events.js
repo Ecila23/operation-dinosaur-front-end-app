@@ -8,7 +8,7 @@ const EventsScreen = props => (
   <View style={styles.eventsMain}>
     <HeaderBar />
     <Text style={styles.eventsTitle}>Events</Text>
-    <ScrollView>
+    <ScrollView style={styles.eventsScrollView}>
       {props.screenProps.details.events
         ? props.screenProps.details.events.map(
             ({ id, time, description, user_id }) => (

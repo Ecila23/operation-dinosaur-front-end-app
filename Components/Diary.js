@@ -8,7 +8,7 @@ const DiaryScreen = props => (
   <View style={styles.diaryMain}>
     <HeaderBar />
     <Text style={styles.diaryTitle}>Quiz Results</Text>
-    <ScrollView>
+    <ScrollView style={styles.diaryScrollView}>
       {props.screenProps.details.quiz
         ? props.screenProps.details.quiz.map(
             ({ completed_at, mood, stiffness, slowness, tremor, id }) => {

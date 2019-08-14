@@ -2,18 +2,15 @@ import React, { StyleSheet } from "react-native";
 
 export default (styles = StyleSheet.create({
   homeScreen: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#E8EDEE"
+    backgroundColor: "white"
   },
   welcomeTitle: {
-    paddingBottom: 50,
     fontWeight: "bold",
     fontSize: 25,
     alignItems: "flex-start",
     justifyContent: "center",
     textAlign: "center",
-    marginTop: 50
+    marginTop: 150,
+    marginBottom: 50
   }
 }));

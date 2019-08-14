@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, Dimensions, ScrollView } from "react-native";
+import { Text, View, Dimensions, ScrollView } from "react-native";
 import { PieChart, LineChart } from "react-native-chart-kit";
 
 const OverviewScreen = props => {
@@ -63,125 +63,115 @@ const OverviewScreen = props => {
               color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`,
               strokeWidth: 2
             }
-          ]
-        }}
-        width={Dimensions.get("window").width}
-        height={220}
-        chartConfig={{
-          backgroundColor: "chartreuse",
-          backgroundGradientFrom: "chartreuse",
-          backgroundGradientTo: "#ffa726",
-          decimalPlaces: 2,
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          style: {
-            borderRadius: 16
-          }
-        }}
-      />
-
-      <Text>Slowness Chart</Text>
-      <LineChart
-        data={{
-          labels: [
-            "Friday",
-            "Saturday",
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday"
-          ],
-          datasets: [
-            {
-              data: slownessResults.slice(-7),
-              color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`,
-              strokeWidth: 2
+          }}
+          accessor="quantity"
+          backgroundColor="transparent"
+          paddingLeft="15"
+          absolute
+        />
+        <Text style={styles.graphTitle}>Mood Results</Text>
+        <LineChart
+          data={{
+            labels: ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"],
+            datasets: [
+              {
+                data: moodResults.slice(-7),
+                color: () => `#003087`,
+                strokeWidth: 2
+              }
+            ]
+          }}
+          width={Dimensions.get("window").width}
+          height={220}
+          chartConfig={{
+            backgroundColor: "#E8EDEE",
+            backgroundGradientFrom: "#FAE100",
+            backgroundGradientTo: "#005EB8",
+            decimalPlaces: 2,
+            color: () => `white`,
+            style: {
+              borderRadius: 26
             }
-          ]
-        }}
-        width={Dimensions.get("window").width}
-        height={220}
-        chartConfig={{
-          backgroundColor: "chartreuse",
-          backgroundGradientFrom: "chartreuse",
-          backgroundGradientTo: "#ffa726",
-          decimalPlaces: 2,
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          style: {
-            borderRadius: 16
-          }
-        }}
-      />
-      <Text>Stiffness Chart</Text>
-      <LineChart
-        data={{
-          labels: [
-            "Friday",
-            "Saturday",
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday"
-          ],
-          datasets: [
-            {
-              data: stiffnessResults.slice(-7),
-              color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`,
-              strokeWidth: 2
+          }}
+        />
+        <Text style={styles.graphTitle}>Slowness Results</Text>
+        <LineChart
+          data={{
+            labels: ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"],
+            datasets: [
+              {
+                data: slownessResults.slice(-7),
+                color: () => `#003087`,
+                strokeWidth: 2
+              }
+            ]
+          }}
+          width={Dimensions.get("window").width}
+          height={220}
+          chartConfig={{
+            backgroundColor: "#E8EDEE",
+            backgroundGradientFrom: "#FAE100",
+            backgroundGradientTo: "#005EB8",
+            decimalPlaces: 2,
+            color: () => `white`,
+            style: {
+              borderRadius: 16
             }
-          ]
-        }}
-        width={Dimensions.get("window").width}
-        height={220}
-        chartConfig={{
-          backgroundColor: "chartreuse",
-          backgroundGradientFrom: "chartreuse",
-          backgroundGradientTo: "#ffa726",
-          decimalPlaces: 2,
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          style: {
-            borderRadius: 16
-          }
-        }}
-      />
-      <Text>Tremor Chart</Text>
-      <LineChart
-        data={{
-          labels: [
-            "Friday",
-            "Saturday",
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday"
-          ],
-          datasets: [
-            {
-              data: tremorResults.slice(-7),
-              color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`,
-              strokeWidth: 2
+          }}
+        />
+        <Text style={styles.graphTitle}>Stiffness Results</Text>
+        <LineChart
+          data={{
+            labels: ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"],
+            datasets: [
+              {
+                data: stiffnessResults.slice(-7),
+                color: () => `#003087`,
+                strokeWidth: 2
+              }
+            ]
+          }}
+          width={Dimensions.get("window").width}
+          height={220}
+          chartConfig={{
+            backgroundColor: "#E8EDEE",
+            backgroundGradientFrom: "#FAE100",
+            backgroundGradientTo: "#005EB8",
+            decimalPlaces: 2,
+            color: () => `white`,
+            style: {
+              borderRadius: 16
             }
-          ]
-        }}
-        width={Dimensions.get("window").width}
-        height={220}
-        chartConfig={{
-          backgroundColor: "chartreuse",
-          backgroundGradientFrom: "chartreuse",
-          backgroundGradientTo: "#ffa726",
-          decimalPlaces: 2,
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          style: {
-            borderRadius: 16
-          }
-        }}
-      />
-    </ScrollView>
+          }}
+        />
+        <Text style={styles.graphTitle}>Tremor Results</Text>
+        <LineChart
+          data={{
+            labels: ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"],
+            datasets: [
+              {
+                data: tremorResults.slice(-7),
+                color: () => `#003087`,
+                strokeWidth: 2
+              }
+            ]
+          }}
+          width={Dimensions.get("window").width}
+          height={220}
+          chartConfig={{
+            backgroundColor: "#E8EDEE",
+            backgroundGradientFrom: "#FAE100",
+            backgroundGradientTo: "#005EB8",
+            decimalPlaces: 2,
+            color: () => `white`,
+            style: {
+              borderRadius: 16
+            }
+          }}
+        />
+      </ScrollView>
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  overviewMain: {
-    marginTop: 88
-  }
-});
 export default OverviewScreen;

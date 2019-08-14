@@ -7,15 +7,13 @@ import Login from "./Login";
 import styles from "./Styling/homeScreenStyling";
 import HeaderBar from "./HeaderBar";
 
-
 class HomeContainer extends React.Component {
   render() {
     const { details } = this.props.screenProps;
     return (
-      <View>
+      <View style={styles.homeScreen}>
         <HeaderBar />
         <Text style={styles.welcomeTitle}>
-
           Hello{details.logged_in ? ` ${details.user.first_name}` : null},
           welcome to MEDIREP!
         </Text>

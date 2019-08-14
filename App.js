@@ -10,7 +10,7 @@ import OverviewScreen from "./Components/Overview";
 import api from "./Utils/apiUtils";
 import { Notifications } from "expo";
 import * as Permissions from "expo-permissions";
-import styles from "./Components/Styling/styling";
+import styles from "./Components/Styling/headerFooterStyling";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faHome,

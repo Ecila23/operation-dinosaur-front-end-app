@@ -2,22 +2,22 @@ import React, { Component } from "react";
 import { Text, View, StyleSheet, TextInput } from "react-native";
 import { Button } from "native-base";
 import api from "../Utils/apiUtils";
-import styles from "./Styling/addMedsStyling";
+import styles from "./Styling/formStyling";
 import HeaderBar from "./HeaderBar";
 
 class AddMeds extends Component {
   state = {
     user_id: 1,
-    type: "Enter pills here",
-    due: "Enter the time the pill is due here"
+    type: "",
+    due: ""
   };
 
   onPressButton = () => {
     const { user_id, type, due } = this.state;
     api.postNewMedication(user_id, type, due).then(
       this.setState({
-        type: "Enter pills here",
-        due: "Enter the time the pill is due here"
+        type: "",
+        due: ""
       })
     );
   };
@@ -25,22 +25,24 @@ class AddMeds extends Component {
     return (
       <View>
         <HeaderBar />
+        <Text style={styles.formText}>Medication Name</Text>
         <TextInput
-          style={styles.addMedsTextInput}
+          placeholder="Name of medication"
+          style={styles.formTextInput}
           onChangeText={type => this.setState({ type })}
           value={this.state.type}
           editable={true}
-          onFocus={() => this.setState({ type: "" })}
         />
+        <Text style={styles.formText}>Time Due</Text>
         <TextInput
-          style={styles.addMedsTextInput}
+          placeholder="Time Due"
+          style={styles.formTextInput}
           onChangeText={due => this.setState({ due })}
           value={this.state.due}
           editable={true}
-          onFocus={() => this.setState({ due: "" })}
         />
         <Button
-          style={styles.addMedsButton}
+          style={styles.formButton}
           title="Submit"
           onPress={this.onPressButton}
         >

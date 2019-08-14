@@ -1,17 +1,25 @@
 import React, { StyleSheet } from "react-native";
+import { Row } from "native-base";
 
 export default (styles = StyleSheet.create({
+  medsMain: {
+    backgroundColor: "white"
+  },
   medSingle: {
     paddingTop: 20
   },
   medsTitle: {
     fontSize: 38,
     fontWeight: "bold",
-    margin: 20,
+    margin: 10,
     textAlign: "center"
   },
+  medScrollView: {
+    paddingTop: 10,
+    marginBottom: 170
+  },
   medCard: {
-    marginBottom: 5,
+    backgroundColor: "#E8EDEE",
     marginHorizontal: 50,
     shadowColor: "#768692",
     shadowOffset: {
@@ -20,7 +28,6 @@ export default (styles = StyleSheet.create({
     shadowOpacity: 0.9
   },
   medText: {
-    backgroundColor: "#fff",
     fontSize: 14,
     paddingVertical: 5,
     paddingHorizontal: 15,
@@ -30,18 +37,27 @@ export default (styles = StyleSheet.create({
   medsScreenButton: {
     justifyContent: "center",
     textAlign: "center",
-    marginLeft: 90,
-    marginRight: 90,
+    marginHorizontal: 90,
     marginTop: 10,
     marginBottom: 15,
+    fontWeight: "bold"
+  },
+  buttonRow: {
+    flexDirection: "row",
+    justifyContent: "space-evenly"
+  },
+  medsScreenButtonTaken: {
+    justifyContent: "flex-end",
+    textAlign: "center",
+    marginHorizontal: 90,
+    marginVertical: 1,
     fontWeight: "bold"
   },
   medsScreenButtonDelete: {
     justifyContent: "flex-end",
     textAlign: "center",
-    marginLeft: 90,
-    marginRight: 90,
-    marginTop: 10,
+    marginHorizontal: 90,
+    marginTop: 1,
     marginBottom: 15,
     fontWeight: "bold"
   }

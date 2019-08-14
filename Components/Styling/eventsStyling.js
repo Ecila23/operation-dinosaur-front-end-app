@@ -2,7 +2,8 @@ import React, { StyleSheet } from "react-native";
 
 export default (styles = StyleSheet.create({
   eventsMain: {
-    marginTop: 88
+    marginTop: 88,
+    backgroundColor: "white"
   },
   eventsSingle: {
     paddingBottom: 20
@@ -10,8 +11,12 @@ export default (styles = StyleSheet.create({
   eventsTitle: {
     fontSize: 38,
     fontWeight: "bold",
-    margin: 20,
+    margin: 10,
     textAlign: "center"
+  },
+  eventsScrollView: {
+    paddingTop: 10,
+    marginBottom: 120
   },
   eventCard: {
     marginBottom: 5,
@@ -23,7 +28,7 @@ export default (styles = StyleSheet.create({
     shadowOpacity: 0.9
   },
   eventsText: {
-    backgroundColor: "#fff",
+    backgroundColor: "#E8EDEE",
     fontSize: 14,
     paddingVertical: 5,
     paddingHorizontal: 15,
